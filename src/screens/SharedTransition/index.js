@@ -4,6 +4,7 @@ import 'react-native-gesture-handler';
 import { SharedElement } from 'react-navigation-shared-element';
 import MasonryList from '@react-native-seoul/masonry-list';
 import { useNavigation, useTheme } from '@react-navigation/native';
+import SafeArea from '../../components/SafeAreaView';
 
 const characters = [
     {
@@ -105,12 +106,13 @@ const renderItem = ({ item, i }) => {
 
 const SharedTransition = () => {
     return (
-        <View style={{ flex: 1 }}>
+        <SafeArea >
             <MasonryList
                 keyExtractor={(item) => item.id}
                 data={characters}
                 numColumns={2}
                 contentContainerStyle={{
+                    paddingTop: 10,
                     paddingHorizontal: 10,
                     alignSelf: 'stretch',
                 }}
@@ -118,7 +120,7 @@ const SharedTransition = () => {
                 renderItem={renderItem}
                 onEndReachedThreshold={0.1}
             />
-        </View>
+        </SafeArea>
     )
 }
 

@@ -7,8 +7,8 @@ const Stack = createSharedElementStackNavigator();
 
 const SharedTransactionNaviagtion = () => {
     return (
-        <Stack.Navigator >
-            <Stack.Screen name="SharedTransition" component={SharedTransition} />
+        <Stack.Navigator>
+            <Stack.Screen name="Shared Transition" component={SharedTransition} />
             <Stack.Screen name="DetailsPage"
                 component={DetailsPage}
                 options={{ headerShown: false }}
