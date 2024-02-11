@@ -1,4 +1,8 @@
 {
   "name": "layoutAnimations",
-  "displayName": "layoutAnimations"
+  "displayName": "React-Native UI Elements",
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-7317318593914035~2201616728",
+    "ios_app_id": "ca-app-pub-xxxxxxxx~xxxxxxxx"
+  }
 }

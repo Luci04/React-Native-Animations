@@ -22,7 +22,7 @@ const characters = [
     {
         "id": 3,
         "name": "Captain America",
-        "img": "https://lh3.googleusercontent.com/proxy/6sk0s1gInMrM1UsYsu9-0AVSdmpdSPJf33yfi_jiyWSVxVUR48f2jVg-R8Ta4uRT56kbijn4rVvizVR2yUlURb4Zy6EG75HNwL7sB2AWBj9tKchtc6TePBDteNyAhrUsrYFS_j0u5FHAgpkIXA",
+        "img": "https://cdn.britannica.com/30/182830-050-96F2ED76/Chris-Evans-title-character-Joe-Johnston-Captain.jpg",
         "description": "Steve Rogers, a frail young man enhanced to the peak of human perfection by an experimental serum, becomes the patriotic superhero Captain America."
     },
     {
@@ -52,7 +52,7 @@ const characters = [
     {
         "id": 8,
         "name": "Black Panther",
-        "img": "https://lh3.googleusercontent.com/proxy/lG87ezyGY2zWzrVbGrwDuDO54KCE9BQZBo-XFhpj8PmfjOrZwHNIgbb41uwFEEmtOkeAicgjyGSTNmdu8A0xG3twEATiFlt9XLiS_fRS7VGoT9RtXH39Gh0-3XKS0otPgp4Dk5MAm56KKIM",
+        "img": "https://gdb.voanews.com/91EE1D49-49F1-4EDE-AEF7-9AC85634737F_w408_r0_s.jpg",
         "description": "T'Challa, the king of the technologically advanced African nation of Wakanda, assumes the mantle of the Black Panther to protect his people and the world."
     },
     {
@@ -113,8 +113,7 @@ const SharedTransition = () => {
                 numColumns={2}
                 contentContainerStyle={{
                     paddingTop: 10,
-                    paddingHorizontal: 10,
-                    alignSelf: 'stretch',
+                    paddingHorizontal: 10
                 }}
                 showsVerticalScrollIndicator={false}
                 renderItem={renderItem}
