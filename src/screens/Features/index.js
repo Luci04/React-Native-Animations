@@ -65,6 +65,22 @@ const Features = () => {
                     <Text style={{ color: '#fff' }}>Confetti Cannon</Text>
                 </View>
             </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => { onNaviation("Glassmorphism"); }}
+                activeOpacity={0.8}
+            >
+                <View style={styles.BtnContainer}>
+                    <Text style={{ color: '#fff' }}>Glassmorphism</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => { onNaviation("StickyFooter"); }}
+                activeOpacity={0.8}
+            >
+                <View style={styles.BtnContainer}>
+                    <Text style={{ color: '#fff' }}>Sticky Footer</Text>
+                </View>
+            </TouchableOpacity>
         </ScrollView>
         <BannerAd
             unitId={adUnitId}

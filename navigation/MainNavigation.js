@@ -1,4 +1,4 @@
-import { Button, StyleSheet, TouchableOpacity } from 'react-native'
+import { Button, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import SharedTransactionNaviagtion from './SharedTransactionNaviagtion';
@@ -9,42 +9,13 @@ import ShimmerPlaceholder from '../src/screens/ShimmerPlaceholder';
 import OnBoardingScreen from '../src/screens/OnBoarding/OnBoardingScreen';
 import SplashScreen from '../src/components/SplashScreen';
 import ConfettiCannon from '../src/screens/ConfettiCannon';
-import IconComponent from '../src/components/IconComponent/IconComponent';
-
-import { RewardedAd, RewardedAdEventType, TestIds } from 'react-native-google-mobile-ads';
-
-const adUnitId = __DEV__ ? TestIds.REWARDED : '***';
-
-const rewarded = RewardedAd.createForAdRequest(adUnitId, {
-    keywords: ['fashion', 'clothing'],
-});
+import AdBtn from '../src/components/AdBtn';
+import Glassmorphism from '../src/screens/Glassmorphism';
+import StickyFooter from '../src/screens/StickFooter';
 
 const Stack = createStackNavigator();
 
 const MainNavigation = () => {
-
-    const [loaded, setLoaded] = useState(false);
-
-    useEffect(() => {
-        const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-            setLoaded(true);
-        });
-        const unsubscribeEarned = rewarded.addAdEventListener(
-            RewardedAdEventType.EARNED_REWARD,
-            reward => {
-                console.log('User earned reward of ', reward);
-            },
-        );
-
-        // Start loading the rewarded ad straight away
-        rewarded.load();
-
-        // Unsubscribe from events on unmount
-        return () => {
-            unsubscribeLoaded();
-            unsubscribeEarned();
-        };
-    }, []);
 
     return (
         <Stack.Navigator initialRouteName='SplashScreen' >
@@ -68,20 +39,25 @@ const MainNavigation = () => {
                     paddingRight: 20
                 },
                 headerRight: () => (
-                    <TouchableOpacity
-                        onPress={async () => {
-                            try {
-                                await rewarded.show();
+                    <AdBtn />
+                ),
 
-                            } catch (error) {
+            }} />
+            <Stack.Screen name="Glassmorphism" component={Glassmorphism} options={{
+                headerRightContainerStyle: {
+                    paddingRight: 20
+                },
+                headerRight: () => (
+                    <AdBtn />
+                ),
 
-                            }
-                        }}
-                        title="Info"
-                        color="#fff"
-                    >
-                        <IconComponent color={'#000'} size={24} iconName={'code'} iconType={'FontAwesome'} />
-                    </TouchableOpacity>
+            }} />
+            <Stack.Screen name="StickyFooter" component={StickyFooter} options={{
+                headerRightContainerStyle: {
+                    paddingRight: 20
+                },
+                headerRight: () => (
+                    <AdBtn />
                 ),
 
             }} />
